@@ -25,6 +25,12 @@ navLinks.forEach(link => {
   link.addEventListener("click", function () {
     // Get data attribute for clicked link
     currency = this.getAttribute("data-currency")
+
+    // Remove all previously selected states
+    navLinks.forEach(link => link.classList.remove("selected"))
+    // Add selected class for this link
+    this.classList.add("selected")
+
     // Check price for new currency
     checkPrice()
   })
