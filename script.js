@@ -4,6 +4,7 @@ const url = "https://api.coindesk.com/v1/bpi/currentprice.json"
 // Elements
 const priceEl = document.querySelector("h1")
 const navLinks = document.querySelectorAll("nav a")
+const currencySpan = document.querySelector("span")
 
 let currency = "GBP"
 
@@ -30,6 +31,9 @@ navLinks.forEach(link => {
     navLinks.forEach(link => link.classList.remove("selected"))
     // Add selected class for this link
     this.classList.add("selected")
+
+    // Update span tag
+    currencySpan.innerHTML = currency
 
     // Check price for new currency
     checkPrice()
