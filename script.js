@@ -39,3 +39,9 @@ navLinks.forEach(link => {
     checkPrice()
   })
 })
+
+// Check the price every 60s
+setInterval(function () {
+  checkPrice()
+  console.log("price updated!")
+}, 60000)
